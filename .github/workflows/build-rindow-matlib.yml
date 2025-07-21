@@ -1,4 +1,4 @@
-name: build-matlib
+name: Build Rindow Matlib
 
 on:
   workflow_dispatch:
@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          repository: rindow/rindow-matlib
 
       - name: Install dependencies
         run: |
