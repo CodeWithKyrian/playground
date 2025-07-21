@@ -43,10 +43,11 @@ jobs:
       - name: Package
         run: |
           cd build
-          cpack -C Release
+          cpack -G TGZ -C Release
+          cpack -G DEB -C Release
 
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact_name }}
-          path: build/packages/*.tar.gz 
+          path: build/packages/*.{tar.gz,deb} 
